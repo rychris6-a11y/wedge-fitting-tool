@@ -6,10 +6,10 @@ export default function AffiliateDisclosure() {
       <h1>Affiliate Disclosure</h1>
       <p className="legal-updated">Last updated: [DATE]</p>
       <p>
-        This Site is a participant in the Amazon Services LLC Associates
-        Program, an affiliate advertising program designed to provide a means
-        for sites to earn advertising fees by advertising and linking to
-        Amazon.com.
+        This Site participates in affiliate programs including TGW (The Golf
+        Warehouse), via the CJ Affiliate network, and may also participate in
+        the Amazon Services LLC Associates Program and similar programs with
+        other golf retailers.
       </p>
 
       <h2>What that means for you</h2>

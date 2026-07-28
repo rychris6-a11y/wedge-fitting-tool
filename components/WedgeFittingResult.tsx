@@ -78,8 +78,8 @@ export default function WedgeFittingResult({
       })}
 
       <p className="compat-disclosure">
-        These links go to Amazon. We may earn a commission if you buy through
-        them — it doesn't cost you extra.
+        These links go to TGW and other golf retailers. We may earn a
+        commission if you buy through them — it doesn't cost you extra.
       </p>
     </div>
   );

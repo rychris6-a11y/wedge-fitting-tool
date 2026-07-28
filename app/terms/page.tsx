@@ -36,9 +36,11 @@ export default function TermsOfUse() {
 
       <h2>Affiliate relationships</h2>
       <p>
-        This Site participates in the Amazon Associates Program and may earn
-        commissions from qualifying purchases at no additional cost to you.
-        See our <a href="/disclosure">Affiliate Disclosure</a> for more.
+        This Site participates in affiliate programs including TGW (The Golf
+        Warehouse) via CJ Affiliate, and may also earn commissions from
+        qualifying purchases through Amazon and other retailers at no
+        additional cost to you. See our{" "}
+        <a href="/disclosure">Affiliate Disclosure</a> for more.
       </p>
 
       <h2>Third-party links</h2>
