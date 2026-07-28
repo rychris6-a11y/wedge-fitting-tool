@@ -1,0 +1,457 @@
+/* app/globals.css
+   Rough-draft styling for the tow capacity tool. Covers every
+   className referenced in page.tsx, VehiclePicker.tsx,
+   TrailerWeightInput.tsx, and CompatibilityResult.tsx.
+   Meant to be replaced/refined once the flow itself is validated. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1a1a1a;
+  background: #f7f7f5;
+  margin: 0;
+}
+
+.tool-page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.tool-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+}
+
+.tool-error {
+  background: #fdecea;
+  color: #7a1f1f;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.tool-loading {
+  font-size: 14px;
+  color: #666;
+}
+
+.tool-start-over {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* shared input styling (vin step, trailer step) */
+
+.trailer-input-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 1.25rem 0 8px;
+}
+
+.trailer-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trailer-input-row input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+}
+
+.trailer-input-unit {
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.trailer-input-help-link {
+  display: block;
+  background: none;
+  border: none;
+  color: #1a56db;
+  font-size: 13px;
+  padding: 8px 0 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.trailer-input-help {
+  background: #f0f4ff;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.trailer-input-help ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.trailer-input-help li {
+  margin-bottom: 4px;
+}
+
+.trailer-input-submit {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 14px;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.trailer-input-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.trailer-input-subtitle {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+/* vehicle picker */
+
+.picker-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.picker-subtitle {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+.picker-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.picker-card {
+  text-align: left;
+  width: 100%;
+  padding: 14px 16px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.picker-card:hover {
+  border-color: #999;
+}
+
+.picker-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.picker-card-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.picker-card-detail {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.picker-not-sure {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  background: transparent;
+  border: 1px dashed #bbb;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sticker-help {
+  background: #fff8e6;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.sticker-help-hint {
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.picker-confirmed {
+  background: #e6f4ea;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.picker-confirmed-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.picker-go-back {
+  background: none;
+  border: none;
+  color: #1a56db;
+  font-size: 13px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.picker-empty {
+  font-size: 14px;
+}
+
+/* compatibility result */
+
+.compat-banner {
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.compat-ok {
+  background: #e6f4ea;
+}
+
+.compat-warn {
+  background: #fdecea;
+}
+
+.compat-verdict {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.compat-detail {
+  font-size: 14px;
+  margin: 0;
+  color: #444;
+}
+
+.compat-note {
+  background: #fff8e6;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.compat-alternatives {
+  margin-top: 1.25rem;
+}
+
+.compat-alternatives-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.compat-alt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compat-alt-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.compat-alt-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.compat-alt-detail {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.compat-alt-note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 8px;
+}
+
+.compat-products {
+  margin-top: 1.25rem;
+}
+
+.compat-products-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.compat-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compat-product-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.compat-product-card:hover {
+  border-color: #999;
+}
+
+.compat-disclosure {
+  font-size: 11px;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* manual vehicle select */
+
+.manual-select-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.manual-select-subtitle {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 4px;
+}
+
+.manual-select-loading,
+.manual-select-empty {
+  font-size: 14px;
+  color: #666;
+}
+
+.manual-select-hint {
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+}
+
+/* site footer */
+
+.site-footer {
+  max-width: 480px;
+  margin: 2rem auto 0;
+  padding: 1.25rem 1.25rem 2rem;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  border-top: 1px solid #e0e0dd;
+}
+
+.site-footer a {
+  font-size: 12px;
+  color: #777;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* legal pages (privacy, terms, disclosure) */
+
+.legal-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  line-height: 1.6;
+}
+
+.legal-page h1 {
+  font-size: 24px;
+  margin: 0 0 4px;
+}
+
+.legal-updated {
+  font-size: 13px;
+  color: #777;
+  margin: 0 0 1.5rem;
+}
+
+.legal-page h2 {
+  font-size: 17px;
+  margin: 1.75rem 0 8px;
+}
+
+.legal-page p,
+.legal-page li {
+  font-size: 14px;
+  color: #333;
+}
+
+.legal-page ul {
+  padding-left: 20px;
+}
+
+.legal-page a {
+  color: #1a56db;
+}
+
+/* wedge fitting result */
+
+.wedge-group {
+  margin-top: 1.25rem;
+}
+
+.wedge-group-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.wedge-no-match {
+  font-size: 13px;
+  color: #777;
+}
