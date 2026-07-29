@@ -508,3 +508,81 @@ select:focus {
 .legal-page a {
   color: var(--flag-dark);
 }
+
+/* -------- chip-in celebration animation -------- */
+
+.chipin-stage {
+  background: var(--paper);
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.chipin-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.chipin-club {
+  transform-origin: 40px 108px;
+  transform: translate(40px, 108px) rotate(-70deg);
+  animation: chipin-swing 2s ease-out forwards;
+}
+
+.chipin-dust {
+  transform: translate(46px, 106px);
+  opacity: 0;
+  animation: chipin-dust 2s ease-out forwards;
+}
+
+.chipin-ball {
+  transform: translate(40px, 108px);
+  animation: chipin-ball 2s cubic-bezier(0.3, 0, 0.6, 1) forwards;
+}
+
+.chipin-flag {
+  transform-origin: 340px 60px;
+  animation: chipin-flag-wave 1.2s ease-in-out infinite;
+}
+
+@keyframes chipin-swing {
+  0%   { transform: translate(40px, 108px) rotate(-70deg); opacity: 1; }
+  8%   { transform: translate(40px, 108px) rotate(15deg); opacity: 1; }
+  16%  { transform: translate(40px, 108px) rotate(35deg); opacity: 0; }
+  100% { transform: translate(40px, 108px) rotate(35deg); opacity: 0; }
+}
+
+@keyframes chipin-dust {
+  0%   { opacity: 0; transform: translate(46px, 106px) scale(0.5); }
+  8%   { opacity: 0; }
+  10%  { opacity: 1; transform: translate(46px, 106px) scale(1); }
+  22%  { opacity: 0; transform: translate(46px, 106px) scale(1.6); }
+  100% { opacity: 0; }
+}
+
+@keyframes chipin-ball {
+  0%   { transform: translate(40px, 108px) scale(1); }
+  8%   { transform: translate(40px, 108px) scale(1); }
+  35%  { transform: translate(160px, 40px) scale(1); }
+  65%  { transform: translate(280px, 95px) scale(1); }
+  80%  { transform: translate(320px, 98px) scale(1); }
+  88%  { transform: translate(338px, 97px) scale(0.75); }
+  93%  { transform: translate(340px, 98px) scale(0.25); }
+  100% { transform: translate(340px, 98px) scale(0); }
+}
+
+@keyframes chipin-flag-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(-4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chipin-club,
+  .chipin-dust,
+  .chipin-ball,
+  .chipin-flag {
+    animation-duration: 0.4s;
+  }
+}
