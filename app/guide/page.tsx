@@ -92,6 +92,67 @@ export default function Guide() {
         regularly open the clubface for specialty shots.
       </p>
 
+      <h2>Backed by real fitters, not just us</h2>
+      <p>
+        Everything above is consistent with how professional club
+        fitters and the people who actually design wedges explain it.
+        Worth reading and watching directly if you want it from the
+        source:
+      </p>
+
+      <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", margin: "1.25rem 0 8px" }}>
+        Articles
+      </h3>
+      <ul>
+        <li>
+          <a href="https://www.golfdigest.com/story/wedge-bounce-versus-wedge-grind-explained" target="_blank" rel="noopener noreferrer">
+            Golf Digest — Grind vs. Bounce, explained
+          </a>
+          <br />
+          Features Bob Vokey, Titleist's master wedge craftsman, on how
+          few golfers understand their own bounce and grind — and U.S.
+          Open champion Wyndham Clark on the exact bounce numbers he plays.
+        </li>
+        <li>
+          <a href="https://www.golfdigest.com/story/everything-you-need-to-know-about-wedge-lofts" target="_blank" rel="noopener noreferrer">
+            Golf Digest — Everything you need to know about wedge lofts
+          </a>
+          <br />
+          Covers the same 4-6° gapping principle this calculator uses,
+          including why a wedge belongs between your pitching wedge and
+          your sand wedge.
+        </li>
+        <li>
+          <a href="https://golf.com/gear/wedges/wedge-fitting-fully-equipped-mailbag/" target="_blank" rel="noopener noreferrer">
+            Golf.com — Is a wedge fitting worth it?
+          </a>
+          <br />
+          A straightforward answer to the exact question this tool is
+          built to answer for free.
+        </li>
+      </ul>
+
+      <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", margin: "1.5rem 0 8px" }}>
+        Videos
+      </h3>
+      <ul>
+        <li>
+          <a href="https://www.titleist.com/teamtitleist/b/tourblog/posts/vokey-ultimate-guide-to-wedges-wedge-bounce-explained" target="_blank" rel="noopener noreferrer">
+            Titleist — Wedge Bounce Explained by Bob Vokey
+          </a>
+          <br />
+          Straight from the person the wedges are named after.
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=SD_Yub0j_QQ" target="_blank" rel="noopener noreferrer">
+            Titleist — Vokey Wedge Fitting at TPI
+          </a>
+          <br />
+          A Golf Digest reporter goes through a full real fitting session
+          with Titleist's own tour rep.
+        </li>
+      </ul>
+
       <h2>Try the calculator</h2>
       <p>
         If you'd rather skip figuring this out manually, <a href="/">the wedge fitting calculator</a> asks
