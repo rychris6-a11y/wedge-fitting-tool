@@ -110,6 +110,13 @@ export default function WedgeFittingTool() {
       <h1 className="tool-title">Find your wedge setup</h1>
       <p className="tool-subtitle">Answer a few questions, no fitting jargon required.</p>
 
+      <p className="trust-strip">
+        <span className="trust-strip-icon" aria-hidden="true">✓</span>
+        Built on the same bounce and gapping principles Titleist's Bob Vokey
+        and Golf Digest teach.{" "}
+        <a href="/guide#sources">See our sources</a>
+      </p>
+
       {error && <p className="tool-error">{error}</p>}
 
       {step === "form" && <WedgeFittingForm onSubmit={handleSubmit} />}

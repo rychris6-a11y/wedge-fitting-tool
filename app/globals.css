@@ -91,6 +91,31 @@ select:focus-visible {
   margin: 0 0 1.5rem;
 }
 
+.trust-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--fairway-light);
+  border-left: 3px solid var(--sand);
+  border-radius: 0 4px 4px 0;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #C7D3CA;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+.trust-strip-icon {
+  color: var(--sand);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.trust-strip a {
+  color: var(--sand);
+  font-weight: 500;
+}
+
 .tool-error {
   background: var(--flag);
   color: var(--chalk);

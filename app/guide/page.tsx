@@ -92,7 +92,7 @@ export default function Guide() {
         regularly open the clubface for specialty shots.
       </p>
 
-      <h2>Backed by real fitters, not just us</h2>
+      <h2 id="sources">Backed by real fitters, not just us</h2>
       <p>
         Everything above is consistent with how professional club
         fitters and the people who actually design wedges explain it.
