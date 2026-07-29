@@ -46,33 +46,34 @@ export default function WedgeFittingResult({
         const matches = recommendedProducts.filter((p) => p.loftDeg === group.loft);
         return (
           <div key={group.label} className="wedge-group">
-            <p className="wedge-group-title">
-              {group.label} — {group.loft}°
-            </p>
-            {matches.length > 0 ? (
-              <div className="compat-products-list">
-                {matches.map((p) => (
-                  <a
-                    key={p.id}
-                    href={p.productUrl ?? "#"}
-                    className="compat-product-card"
-                    target="_blank"
-                    rel="noopener noreferrer sponsored"
-                  >
-                    <span className="compat-product-name">
-                      {p.brand} {p.model} — {p.loftDeg}° {p.bounceDeg}°
-                    </span>
-                    <span className="compat-product-arrow" aria-hidden="true">→</span>
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <p className="wedge-no-match">
-                No exact match yet in our database for this loft and bounce —
-                ask for a {group.loft}° wedge with {bounceRange.low}-{bounceRange.high}°
-                bounce next time you're at a golf shop.
-              </p>
-            )}
+            <div className="wedge-marker">{group.loft}°</div>
+            <div className="wedge-group-content">
+              <p className="wedge-group-title">{group.label}</p>
+              {matches.length > 0 ? (
+                <div className="compat-products-list">
+                  {matches.map((p) => (
+                    <a
+                      key={p.id}
+                      href={p.productUrl ?? "#"}
+                      className="compat-product-card"
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                    >
+                      <span className="compat-product-name">
+                        {p.brand} {p.model} — {p.loftDeg}° {p.bounceDeg}°
+                      </span>
+                      <span className="compat-product-arrow" aria-hidden="true">→</span>
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <p className="wedge-no-match">
+                  No exact match yet in our database for this loft and bounce —
+                  ask for a {group.loft}° wedge with {bounceRange.low}-{bounceRange.high}°
+                  bounce next time you're at a golf shop.
+                </p>
+              )}
+            </div>
           </div>
         );
       })}

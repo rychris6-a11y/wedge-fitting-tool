@@ -10,6 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         {children}
+        <hr className="fairway-divider" style={{maxWidth: '480px', margin: '2rem auto 0'}} />
         <footer className="site-footer">
           <a href="/guide">Wedge Fitting Guide</a>
           <a href="/privacy">Privacy Policy</a>
