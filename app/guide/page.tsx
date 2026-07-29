@@ -130,19 +130,20 @@ export default function Guide() {
           A straightforward answer to the exact question this tool is
           built to answer for free.
         </li>
+        <li>
+          <a href="https://www.titleist.com/teamtitleist/b/tourblog/posts/vokey-ultimate-guide-to-wedges-wedge-bounce-explained" target="_blank" rel="noopener noreferrer">
+            Titleist — Wedge Bounce Explained by Bob Vokey
+          </a>
+          <br />
+          Straight from the person the wedges are named after, on
+          Titleist's own site.
+        </li>
       </ul>
 
       <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", margin: "1.5rem 0 8px" }}>
         Videos
       </h3>
       <ul>
-        <li>
-          <a href="https://www.titleist.com/teamtitleist/b/tourblog/posts/vokey-ultimate-guide-to-wedges-wedge-bounce-explained" target="_blank" rel="noopener noreferrer">
-            Titleist — Wedge Bounce Explained by Bob Vokey
-          </a>
-          <br />
-          Straight from the person the wedges are named after.
-        </li>
         <li>
           <a href="https://www.youtube.com/watch?v=SD_Yub0j_QQ" target="_blank" rel="noopener noreferrer">
             Titleist — Vokey Wedge Fitting at TPI
