@@ -9,6 +9,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <header className="site-header">
+          <a href="/" className="site-header-link">⛳ Wedge Fitting Calculator</a>
+        </header>
         {children}
         <hr className="fairway-divider" style={{maxWidth: '480px', margin: '2rem auto 0'}} />
         <footer className="site-footer">

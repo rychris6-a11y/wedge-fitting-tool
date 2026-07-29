@@ -63,7 +63,25 @@ select:focus-visible {
 .tool-page {
   max-width: 480px;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem 1rem;
+  padding: 1.5rem 1.25rem 1rem;
+}
+
+.site-header {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 0;
+}
+
+.site-header-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #8FA096;
+  text-decoration: none;
+}
+
+.site-header-link:hover {
+  color: var(--sand);
 }
 
 .tool-eyebrow {
@@ -531,6 +549,19 @@ select:focus {
 }
 
 .legal-page a {
+  color: var(--flag-dark);
+}
+
+.legal-page a.legal-back-link {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+}
+
+.legal-page a.legal-back-link:hover {
   color: var(--flag-dark);
 }
 

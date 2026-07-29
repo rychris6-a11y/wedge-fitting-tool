@@ -12,6 +12,7 @@ export const metadata = {
 export default function Guide() {
   return (
     <main className="legal-page">
+      <a href="/" className="legal-back-link">← Back to calculator</a>
       <h1>Wedge bounce and loft gapping, explained without the jargon</h1>
       <p className="legal-updated">
         The short version: two numbers matter for your wedges — bounce and

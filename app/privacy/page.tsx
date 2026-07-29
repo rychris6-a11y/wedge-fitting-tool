@@ -3,6 +3,7 @@ export const metadata = { title: "Privacy Policy | Wedge Fitting Calculator" };
 export default function PrivacyPolicy() {
   return (
     <main className="legal-page">
+      <a href="/" className="legal-back-link">← Back to calculator</a>
       <h1>Privacy Policy</h1>
       <p className="legal-updated">Last updated: [DATE]</p>
       <p>

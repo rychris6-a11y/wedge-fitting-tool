@@ -3,6 +3,7 @@ export const metadata = { title: "Terms of Use | Wedge Fitting Calculator" };
 export default function TermsOfUse() {
   return (
     <main className="legal-page">
+      <a href="/" className="legal-back-link">← Back to calculator</a>
       <h1>Terms of Use</h1>
       <p className="legal-updated">Last updated: [DATE]</p>
       <p>
