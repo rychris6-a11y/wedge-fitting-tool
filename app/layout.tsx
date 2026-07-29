@@ -11,6 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <footer className="site-footer">
+          <a href="/guide">Wedge Fitting Guide</a>
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Use</a>
           <a href="/disclosure">Affiliate Disclosure</a>
