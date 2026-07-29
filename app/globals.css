@@ -535,6 +535,9 @@ select:focus {
 }
 
 /* -------- chip-in celebration animation -------- */
+/* Timing keyed to putt-in-hole.mp3's actual waveform (2592ms total):
+   contact 140ms (5.4%), ball reaches cup + rattle starts 980ms (37.8%),
+   rattle settles 1500ms (57.9%), quiet by 1765ms (68.1%). */
 
 .chipin-stage {
   background: var(--paper);
@@ -552,19 +555,33 @@ select:focus {
 
 .chipin-club {
   transform-origin: 40px 108px;
-  transform: translate(40px, 108px) rotate(-70deg);
-  animation: chipin-swing 2s ease-out forwards;
+  transform: translate(28px, 78px) rotate(-50deg);
+  animation: chipin-swing 2592ms ease-out forwards;
 }
 
 .chipin-dust {
   transform: translate(46px, 106px);
   opacity: 0;
-  animation: chipin-dust 2s ease-out forwards;
+  animation: chipin-dust 2592ms ease-out forwards;
 }
 
-.chipin-ball {
-  transform: translate(40px, 108px);
-  animation: chipin-ball 2s cubic-bezier(0.3, 0, 0.6, 1) forwards;
+.chipin-shadow {
+  offset-path: path("M 40 122 Q 150 122 255 122 L 300 122 L 328 122 L 338 122");
+  offset-distance: 0%;
+  transform-box: fill-box;
+  animation: chipin-shadow-move 2592ms cubic-bezier(0.3, 0, 0.6, 1) forwards;
+}
+
+.chipin-ball-motion {
+  offset-path: path("M 40 108 Q 150 15 255 92 L 300 96 L 328 97 L 338 97");
+  offset-distance: 0%;
+  offset-rotate: 0deg;
+  transform-box: fill-box;
+  animation: chipin-ball-move 2592ms cubic-bezier(0.3, 0, 0.6, 1) forwards;
+}
+
+.chipin-ball-spin {
+  animation: chipin-ball-spin 700ms linear infinite, chipin-ball-scale 2592ms ease-out forwards;
 }
 
 .chipin-flag {
@@ -572,30 +589,66 @@ select:focus {
   animation: chipin-flag-wave 1.2s ease-in-out infinite;
 }
 
+.chipin-sparkle {
+  opacity: 0;
+  transform-origin: 340px 98px;
+  animation: chipin-sparkle 2592ms ease-out forwards;
+}
+
 @keyframes chipin-swing {
-  0%   { transform: translate(40px, 108px) rotate(-70deg); opacity: 1; }
-  8%   { transform: translate(40px, 108px) rotate(15deg); opacity: 1; }
-  16%  { transform: translate(40px, 108px) rotate(35deg); opacity: 0; }
-  100% { transform: translate(40px, 108px) rotate(35deg); opacity: 0; }
+  0%   { transform: translate(28px, 78px) rotate(-50deg); opacity: 1; }
+  5.4% { transform: translate(28px, 78px) rotate(20deg); opacity: 1; }
+  12%  { transform: translate(28px, 78px) rotate(40deg); opacity: 0; }
+  100% { transform: translate(28px, 78px) rotate(40deg); opacity: 0; }
 }
 
 @keyframes chipin-dust {
-  0%   { opacity: 0; transform: translate(46px, 106px) scale(0.5); }
-  8%   { opacity: 0; }
-  10%  { opacity: 1; transform: translate(46px, 106px) scale(1); }
-  22%  { opacity: 0; transform: translate(46px, 106px) scale(1.6); }
-  100% { opacity: 0; }
+  0%    { opacity: 0; transform: translate(46px, 106px) scale(0.5); }
+  5.4%  { opacity: 0; }
+  7%    { opacity: 1; transform: translate(46px, 106px) scale(1); }
+  16%   { opacity: 0; transform: translate(46px, 106px) scale(1.7); }
+  100%  { opacity: 0; }
 }
 
-@keyframes chipin-ball {
-  0%   { transform: translate(40px, 108px) scale(1); }
-  8%   { transform: translate(40px, 108px) scale(1); }
-  35%  { transform: translate(160px, 40px) scale(1); }
-  65%  { transform: translate(280px, 95px) scale(1); }
-  80%  { transform: translate(320px, 98px) scale(1); }
-  88%  { transform: translate(338px, 97px) scale(0.75); }
-  93%  { transform: translate(340px, 98px) scale(0.25); }
-  100% { transform: translate(340px, 98px) scale(0); }
+/* Ball: airborne 5.4% -> 37.8% (real flight time to the cup per the
+   audio), rattles in place 37.8% -> 57.9%, settles and sinks by 68%. */
+@keyframes chipin-ball-move {
+  0%     { offset-distance: 0%; }
+  5.4%   { offset-distance: 0%; }
+  37.8%  { offset-distance: 88%; }
+  40%    { offset-distance: 90%; }
+  44%    { offset-distance: 86%; }
+  48%    { offset-distance: 91%; }
+  52%    { offset-distance: 87%; }
+  57.9%  { offset-distance: 89%; }
+  68.1%  { offset-distance: 100%; }
+  100%   { offset-distance: 100%; }
+}
+
+@keyframes chipin-ball-scale {
+  0%     { transform: scale(1); }
+  37.8%  { transform: scale(1); }
+  57.9%  { transform: scale(1); }
+  63%    { transform: scale(0.5); }
+  68.1%  { transform: scale(0); }
+  100%   { transform: scale(0); }
+}
+
+@keyframes chipin-ball-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Shadow tracks the ball's ground position; grows and lightens at
+   the apex of the arc, shrinks and darkens near the ground — this
+   is the single biggest cue that sells the ball as airborne. */
+@keyframes chipin-shadow-move {
+  0%     { offset-distance: 0%; opacity: 0.5; }
+  5.4%   { offset-distance: 0%; opacity: 0.5; }
+  22%    { offset-distance: 44%; opacity: 0.15; }
+  37.8%  { offset-distance: 88%; opacity: 0.45; }
+  68.1%  { offset-distance: 100%; opacity: 0; }
+  100%   { offset-distance: 100%; opacity: 0; }
 }
 
 @keyframes chipin-flag-wave {
@@ -603,11 +656,21 @@ select:focus {
   50%      { transform: rotate(-4deg); }
 }
 
+@keyframes chipin-sparkle {
+  0%     { opacity: 0; transform: scale(0.6); }
+  63%    { opacity: 0; }
+  66%    { opacity: 1; transform: scale(0.6); }
+  85%    { opacity: 0; transform: scale(1.6); }
+  100%   { opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .chipin-club,
   .chipin-dust,
-  .chipin-ball,
-  .chipin-flag {
+  .chipin-shadow,
+  .chipin-ball-motion,
+  .chipin-ball-spin,
+  .chipin-sparkle {
     animation-duration: 0.4s;
   }
 }
