@@ -5,7 +5,7 @@ export default function TermsOfUse() {
     <main className="legal-page">
       <a href="/" className="legal-back-link">← Back to calculator</a>
       <h1>Terms of Use</h1>
-      <p className="legal-updated">Last updated: [DATE]</p>
+      <p className="legal-updated">Last updated: August 6, 2026</p>
       <p>
         By using this website (the "Site"), you agree to these Terms of Use.
       </p>
@@ -30,17 +30,17 @@ export default function TermsOfUse() {
 
       <h2>Limitation of liability</h2>
       <p>
-        To the fullest extent permitted by law, [YOUR BUSINESS NAME] is not
+        To the fullest extent permitted by law, WFC is not
         liable for any damages or loss arising from your use of, or reliance
         on, recommendations provided by this Site.
       </p>
 
       <h2>Affiliate relationships</h2>
       <p>
-        This Site participates in affiliate programs including TGW (The Golf
-        Warehouse) via CJ Affiliate, and may also earn commissions from
-        qualifying purchases through Amazon and other retailers at no
-        additional cost to you. See our{" "}
+        This Site participates in the affiliate program for TGW (The
+        Golfer's World) via the CJ Affiliate network, and may earn
+        commissions from qualifying purchases at no additional cost to you.
+        See our{" "}
         <a href="/disclosure">Affiliate Disclosure</a> for more.
       </p>
 
@@ -55,11 +55,11 @@ export default function TermsOfUse() {
 
       <h2>Governing law</h2>
       <p>
-        These Terms are governed by the laws of the State of [YOUR STATE].
+        These Terms are governed by the laws of the State of Michigan.
       </p>
 
       <h2>Contact us</h2>
-      <p>Questions? Contact us at [YOUR CONTACT EMAIL].</p>
+      <p>Questions? Contact us at WFCtools@gmail.com.</p>
     </main>
   );
 }

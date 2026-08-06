@@ -5,12 +5,10 @@ export default function AffiliateDisclosure() {
     <main className="legal-page">
       <a href="/" className="legal-back-link">← Back to calculator</a>
       <h1>Affiliate Disclosure</h1>
-      <p className="legal-updated">Last updated: [DATE]</p>
+      <p className="legal-updated">Last updated: August 6, 2026</p>
       <p>
-        This Site participates in affiliate programs including TGW (The Golf
-        Warehouse), via the CJ Affiliate network, and may also participate in
-        the Amazon Services LLC Associates Program and similar programs with
-        other golf retailers.
+        This Site participates in the affiliate program for TGW (The
+        Golfer's World), via the CJ Affiliate network.
       </p>
 
       <h2>What that means for you</h2>
@@ -28,7 +26,7 @@ export default function AffiliateDisclosure() {
       </p>
 
       <h2>Questions</h2>
-      <p>Contact us at [YOUR CONTACT EMAIL].</p>
+      <p>Contact us at WFCtools@gmail.com.</p>
     </main>
   );
 }

@@ -5,9 +5,9 @@ export default function PrivacyPolicy() {
     <main className="legal-page">
       <a href="/" className="legal-back-link">← Back to calculator</a>
       <h1>Privacy Policy</h1>
-      <p className="legal-updated">Last updated: [DATE]</p>
+      <p className="legal-updated">Last updated: August 6, 2026</p>
       <p>
-        This Privacy Policy explains how [YOUR BUSINESS NAME] ("we," "us," or
+        This Privacy Policy explains how WFC ("we," "us," or
         "our") handles information when you use this website (the "Site").
       </p>
 
@@ -32,16 +32,18 @@ export default function PrivacyPolicy() {
 
       <h2>Affiliate links and third parties</h2>
       <p>
-        This Site links to third-party retailers, including Amazon, through
-        affiliate programs. If you click one of these links and make a
-        purchase, we may earn a commission at no extra cost to you. We are
-        not responsible for the privacy practices of these third-party sites.
+        This Site links to third-party retailers, including TGW (The Golfer's
+        World), through affiliate programs. If you click one of these links
+        and make a purchase, we may earn a commission at no extra cost to
+        you. We are not responsible for the privacy practices of these
+        third-party sites.
       </p>
 
       <h2>Cookies and analytics</h2>
       <p>
-        We may use analytics tools to understand aggregate usage of the Site.
-        [ADJUST THIS SECTION TO MATCH THE SPECIFIC ANALYTICS TOOL YOU USE.]
+        This Site does not currently use analytics tools. If that changes,
+        this section will be updated to name the specific tool and how it
+        handles your data.
       </p>
 
       <h2>Children's privacy</h2>
@@ -51,7 +53,7 @@ export default function PrivacyPolicy() {
       <p>We may update this Privacy Policy from time to time.</p>
 
       <h2>Contact us</h2>
-      <p>Questions? Contact us at [YOUR CONTACT EMAIL].</p>
+      <p>Questions? Contact us at WFCtools@gmail.com.</p>
     </main>
   );
 }
