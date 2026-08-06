@@ -5,7 +5,7 @@ export default function AffiliateDisclosure() {
     <main className="legal-page">
       <a href="/" className="legal-back-link">← Back to calculator</a>
       <h1>Affiliate Disclosure</h1>
-      <p className="legal-updated">Last updated: 7/28/2026</p>
+      <p className="legal-updated">Last updated: [DATE]</p>
       <p>
         This Site participates in affiliate programs including TGW (The Golf
         Warehouse), via the CJ Affiliate network, and may also participate in

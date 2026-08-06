@@ -40,9 +40,15 @@ html {
 body {
   font-family: 'IBM Plex Sans', sans-serif;
   color: var(--chalk);
-  background: var(--fairway);
+  background-color: var(--fairway);
   background-image:
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 80px);
+    repeating-linear-gradient(
+      100deg,
+      rgba(255,255,255,0.035) 0px,
+      rgba(255,255,255,0.035) 90px,
+      rgba(0,0,0,0.035) 90px,
+      rgba(0,0,0,0.035) 180px
+    );
   margin: 0;
   min-height: 100vh;
 }
@@ -215,6 +221,14 @@ select {
 
 select {
   font-family: 'IBM Plex Sans', sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23C23B3B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
 }
 
 .trailer-input-row input:focus,
