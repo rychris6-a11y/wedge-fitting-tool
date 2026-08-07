@@ -1,4 +1,5 @@
 import "./globals.css";
+import MowerBackground from "@/components/MowerBackground";
 
 export const metadata = {
   title: "Wedge Fitting Calculator",
@@ -9,6 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <MowerBackground />
         <header className="site-header">
           <a href="/" className="site-header-link">⛳ Wedge Fitting Calculator</a>
         </header>

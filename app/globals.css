@@ -587,6 +587,29 @@ select:focus {
   color: var(--flag-dark);
 }
 
+/* -------- mower background reveal (runs once on page load) -------- */
+
+.mower-bg-container {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.mower-bg-mask {
+  position: absolute;
+  inset: 0;
+  background-color: var(--fairway);
+}
+
+.mower-bg-mower {
+  position: absolute;
+  width: 46px;
+  height: auto;
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.35));
+}
+
 .legal-page a.legal-back-link {
   display: inline-block;
   font-family: 'IBM Plex Mono', monospace;
