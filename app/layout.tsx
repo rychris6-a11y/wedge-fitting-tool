@@ -1,6 +1,7 @@
 import Link from "next/link";
 import "./globals.css";
 import MowerBackground from "@/components/MowerBackground";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: "Wedge Fitting Calculator",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Link href="/terms">Terms of Use</Link>
           <Link href="/disclosure">Affiliate Disclosure</Link>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
