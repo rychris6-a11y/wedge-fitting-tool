@@ -3,6 +3,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import WedgeFittingForm from "@/components/WedgeFittingForm";
 import WedgeFittingResult from "@/components/WedgeFittingResult";
 import ChipInAnimation from "@/components/ChipInAnimation";
@@ -122,7 +123,7 @@ export default function WedgeFittingTool() {
         <span className="trust-strip-icon" aria-hidden="true">✓</span>
         Built on the same bounce and gapping principles Titleist's Bob Vokey
         and Golf Digest teach.{" "}
-        <a href="/guide#sources">See our sources</a>
+        <Link href="/guide#sources">See our sources</Link>
       </p>
 
       {error && <p className="tool-error">{error}</p>}

@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 export const metadata = { title: "Affiliate Disclosure | Wedge Fitting Calculator" };
 
 export default function AffiliateDisclosure() {
   return (
     <main className="legal-page">
-      <a href="/" className="legal-back-link">← Back to calculator</a>
+      <Link href="/" className="legal-back-link">← Back to calculator</Link>
       <h1>Affiliate Disclosure</h1>
       <p className="legal-updated">Last updated: August 6, 2026</p>
       <p>

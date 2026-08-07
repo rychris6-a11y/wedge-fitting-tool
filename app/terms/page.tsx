@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 export const metadata = { title: "Terms of Use | Wedge Fitting Calculator" };
 
 export default function TermsOfUse() {
   return (
     <main className="legal-page">
-      <a href="/" className="legal-back-link">← Back to calculator</a>
+      <Link href="/" className="legal-back-link">← Back to calculator</Link>
       <h1>Terms of Use</h1>
       <p className="legal-updated">Last updated: August 6, 2026</p>
       <p>
@@ -41,7 +43,7 @@ export default function TermsOfUse() {
         Golfer's World) via the CJ Affiliate network, and may earn
         commissions from qualifying purchases at no additional cost to you.
         See our{" "}
-        <a href="/disclosure">Affiliate Disclosure</a> for more.
+        <Link href="/disclosure">Affiliate Disclosure</Link> for more.
       </p>
 
       <h2>Third-party links</h2>

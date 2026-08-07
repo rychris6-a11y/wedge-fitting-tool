@@ -3,6 +3,8 @@
 // queries to rank (wedge bounce, loft gapping) and gives forum
 // replies something real to point to beyond the bare calculator link.
 
+import Link from "next/link";
+
 export const metadata = {
   title: "Wedge Bounce and Loft Gapping Explained | Wedge Fitting Calculator",
   description:
@@ -12,7 +14,7 @@ export const metadata = {
 export default function Guide() {
   return (
     <main className="legal-page">
-      <a href="/" className="legal-back-link">← Back to calculator</a>
+      <Link href="/" className="legal-back-link">← Back to calculator</Link>
       <h1>Wedge bounce and loft gapping, explained without the jargon</h1>
       <p className="legal-updated">
         The short version: two numbers matter for your wedges — bounce and
@@ -157,7 +159,7 @@ export default function Guide() {
 
       <h2>Try the calculator</h2>
       <p>
-        If you'd rather skip figuring this out manually, <a href="/">the wedge fitting calculator</a> asks
+        If you'd rather skip figuring this out manually, <Link href="/">the wedge fitting calculator</Link> asks
         about your miss and your typical course conditions, then gives you a
         specific bounce range, loft gapping, and matching product
         recommendations — no fitting terminology required.
