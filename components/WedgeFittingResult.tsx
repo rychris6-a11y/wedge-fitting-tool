@@ -1,6 +1,7 @@
 // components/WedgeFittingResult.tsx
 
 import Link from "next/link";
+import EmailSignup from "./EmailSignup";
 
 interface WedgeProduct {
   id: string;
@@ -85,6 +86,8 @@ export default function WedgeFittingResult({
         commission if you buy through them — it doesn't cost you extra.{" "}
         <Link href="/guide#sources">How we back these recommendations</Link>
       </p>
+
+      <EmailSignup />
     </div>
   );
 }

@@ -579,6 +579,90 @@ select:focus {
   color: var(--flag-dark);
 }
 
+/* -------- email signup -------- */
+
+.email-signup {
+  margin-top: 1.5rem;
+  background: var(--surface-card);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+}
+
+.email-signup-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.email-signup-form {
+  display: flex;
+  gap: 8px;
+}
+
+.email-signup-form input {
+  flex: 1;
+  padding: 10px 12px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  border: 1.5px solid var(--paper-line);
+  border-radius: 4px;
+  background: var(--surface-card-input);
+}
+
+.email-signup-form input:focus {
+  border-color: var(--fairway);
+  outline: none;
+}
+
+.email-signup-form button {
+  padding: 10px 16px;
+  background: var(--flag);
+  color: var(--chalk);
+  border: none;
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.email-signup-form button:hover:not(:disabled) {
+  background: var(--flag-dark);
+}
+
+.email-signup-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.email-signup-note {
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin: 8px 0 0;
+}
+
+.email-signup-error {
+  font-size: 12px;
+  color: var(--flag-dark);
+  margin: 8px 0 0;
+}
+
+.email-signup-done {
+  background: var(--surface-card);
+}
+
+.email-signup-done p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  margin: 0;
+}
+
 /* -------- mower background reveal (runs once on page load) -------- */
 
 .mower-bg-container {
