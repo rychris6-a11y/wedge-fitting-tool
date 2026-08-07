@@ -115,7 +115,6 @@ export default function WedgeFittingTool() {
 
   return (
     <main className="tool-page">
-      <p className="tool-eyebrow">⛳ Wedge Yardage</p>
       <h1 className="tool-title">Find your wedge setup</h1>
       <p className="tool-subtitle">Answer a few questions, no fitting jargon required.</p>
 
