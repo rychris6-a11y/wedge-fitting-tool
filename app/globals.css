@@ -17,6 +17,27 @@
   --chalk: #F4F1E8;
   --ink: #1F2A22;
   --ink-soft: #4A5A4F;
+
+  /* Semantic aliases, matching Claude Design's token system --
+     additive only, resolve to the exact same values above. */
+  --success: #6FAE8C;
+  --muted-1: #8FA096;
+  --muted-2: #B9C8BE;
+  --muted-3: #C7D3CA;
+  --surface-ground: var(--fairway);
+  --surface-ground-raised: var(--fairway-light);
+  --surface-card: var(--paper);
+  --surface-card-input: #FFFDF7;
+  --surface-help: #E8E1CB;
+  --text-on-ground: var(--chalk);
+  --text-on-card: var(--ink);
+  --text-on-card-soft: var(--ink-soft);
+  --accent: var(--flag);
+  --accent-strong: var(--flag-dark);
+  --highlight: var(--sand);
+  --focus-ring: var(--sand);
+  --texture-fairway-stripes: repeating-linear-gradient(100deg, rgba(255,255,255,0.035) 0px, rgba(255,255,255,0.035) 90px, rgba(0,0,0,0.035) 90px, rgba(0,0,0,0.035) 180px);
+  --texture-scorecard-tape: repeating-linear-gradient(90deg, var(--accent) 0 10px, transparent 10px 20px);
 }
 
 * {
@@ -599,9 +620,9 @@ select:focus {
 }
 
 .chipin-club {
-  transform-origin: 40px 108px;
-  transform: translate(28px, 78px) rotate(-50deg);
-  animation: chipin-swing 2592ms ease-out forwards;
+  transform-origin: 24px 78px;
+  transform: rotate(-18deg);
+  animation: chipin-swing 2592ms cubic-bezier(0.6, 0, 1, 0.45) forwards;
 }
 
 .chipin-dust {
@@ -611,18 +632,19 @@ select:focus {
 }
 
 .chipin-shadow {
-  offset-path: path("M 40 122 Q 150 122 255 122 L 300 122 L 328 122 L 338 122");
+  offset-path: path("M 40 122 L 338 122");
   offset-distance: 0%;
   transform-box: fill-box;
-  animation: chipin-shadow-move 2592ms cubic-bezier(0.3, 0, 0.6, 1) forwards;
+  transform-origin: center;
+  animation: chipin-shadow-move 2592ms linear forwards;
 }
 
 .chipin-ball-motion {
-  offset-path: path("M 40 108 Q 150 15 255 92 L 300 96 L 328 97 L 338 97");
+  offset-path: path("M 40 108 Q 110 20 180 103 Q 210 70 250 100 Q 275 85 300 98 Q 315 93 325 97 L 338 97");
   offset-distance: 0%;
   offset-rotate: 0deg;
   transform-box: fill-box;
-  animation: chipin-ball-move 2592ms cubic-bezier(0.3, 0, 0.6, 1) forwards;
+  animation: chipin-ball-move 2592ms linear forwards;
 }
 
 .chipin-ball-spin {
@@ -641,10 +663,12 @@ select:focus {
 }
 
 @keyframes chipin-swing {
-  0%   { transform: translate(28px, 78px) rotate(-50deg); opacity: 1; }
-  5.4% { transform: translate(28px, 78px) rotate(20deg); opacity: 1; }
-  12%  { transform: translate(28px, 78px) rotate(40deg); opacity: 0; }
-  100% { transform: translate(28px, 78px) rotate(40deg); opacity: 0; }
+  0%   { transform: rotate(-18deg); opacity: 1; }
+  4%   { transform: rotate(-20deg); opacity: 1; }
+  5.4% { transform: rotate(0deg); opacity: 1; }
+  8%   { transform: rotate(16deg); opacity: 1; }
+  12%  { transform: rotate(24deg); opacity: 0; }
+  100% { transform: rotate(24deg); opacity: 0; }
 }
 
 @keyframes chipin-dust {
@@ -655,28 +679,24 @@ select:focus {
   100%  { opacity: 0; }
 }
 
-/* Ball: airborne 5.4% -> 37.8% (real flight time to the cup per the
-   audio), rattles in place 37.8% -> 57.9%, settles and sinks by 68%. */
+/* Multi-bounce landing: the ball bounces several times (matching the
+   path's Q-curve segments) rather than one smooth arc into a rattle. */
 @keyframes chipin-ball-move {
-  0%     { offset-distance: 0%; }
-  5.4%   { offset-distance: 0%; }
-  37.8%  { offset-distance: 88%; }
-  40%    { offset-distance: 90%; }
-  44%    { offset-distance: 86%; }
-  48%    { offset-distance: 91%; }
-  52%    { offset-distance: 87%; }
-  57.9%  { offset-distance: 89%; }
-  68.1%  { offset-distance: 100%; }
-  100%   { offset-distance: 100%; }
+  0%    { offset-distance: 0%;   animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1); }
+  5.4%  { offset-distance: 0%;   animation-timing-function: cubic-bezier(0.3, 0, 0.65, 1); }
+  32%   { offset-distance: 45%;  animation-timing-function: cubic-bezier(0.35, 0, 0.65, 1); }
+  49%   { offset-distance: 67%;  animation-timing-function: cubic-bezier(0.35, 0, 0.65, 1); }
+  61%   { offset-distance: 83%;  animation-timing-function: ease-out; }
+  69%   { offset-distance: 93%;  animation-timing-function: ease-out; }
+  72%   { offset-distance: 100%; }
+  100%  { offset-distance: 100%; }
 }
 
 @keyframes chipin-ball-scale {
-  0%     { transform: scale(1); }
-  37.8%  { transform: scale(1); }
-  57.9%  { transform: scale(1); }
-  63%    { transform: scale(0.5); }
-  68.1%  { transform: scale(0); }
-  100%   { transform: scale(0); }
+  0%   { transform: scale(1); }
+  72%  { transform: scale(1); }
+  78%  { transform: scale(0); }
+  100% { transform: scale(0); }
 }
 
 @keyframes chipin-ball-spin {
@@ -684,16 +704,23 @@ select:focus {
   to   { transform: rotate(360deg); }
 }
 
-/* Shadow tracks the ball's ground position; grows and lightens at
-   the apex of the arc, shrinks and darkens near the ground — this
-   is the single biggest cue that sells the ball as airborne. */
+/* Shadow pulses in opacity/scale at each bounce impact, matching the
+   ball's own bounce points -- this is what actually sells contact
+   with the ground rather than a smooth float. */
 @keyframes chipin-shadow-move {
-  0%     { offset-distance: 0%; opacity: 0.5; }
-  5.4%   { offset-distance: 0%; opacity: 0.5; }
-  22%    { offset-distance: 44%; opacity: 0.15; }
-  37.8%  { offset-distance: 88%; opacity: 0.45; }
-  68.1%  { offset-distance: 100%; opacity: 0; }
-  100%   { offset-distance: 100%; opacity: 0; }
+  0%    { offset-distance: 0%;   opacity: 0.5;  transform: scale(1); }
+  5.4%  { offset-distance: 0%;   opacity: 0.5;  transform: scale(1); }
+  19%   { offset-distance: 22%;  opacity: 0.15; transform: scale(0.5); }
+  32%   { offset-distance: 45%;  opacity: 0.45; transform: scale(1); }
+  41%   { offset-distance: 56%;  opacity: 0.2;  transform: scale(0.6); }
+  49%   { offset-distance: 67%;  opacity: 0.42; transform: scale(0.95); }
+  55%   { offset-distance: 75%;  opacity: 0.25; transform: scale(0.7); }
+  61%   { offset-distance: 83%;  opacity: 0.4;  transform: scale(0.92); }
+  65%   { offset-distance: 88%;  opacity: 0.3;  transform: scale(0.8); }
+  69%   { offset-distance: 93%;  opacity: 0.38; transform: scale(0.9); }
+  72%   { offset-distance: 100%; opacity: 0.35; transform: scale(1); }
+  80%   { offset-distance: 100%; opacity: 0;    transform: scale(1); }
+  100%  { offset-distance: 100%; opacity: 0;    transform: scale(1); }
 }
 
 @keyframes chipin-flag-wave {
@@ -703,9 +730,9 @@ select:focus {
 
 @keyframes chipin-sparkle {
   0%     { opacity: 0; transform: scale(0.6); }
-  63%    { opacity: 0; }
-  66%    { opacity: 1; transform: scale(0.6); }
-  85%    { opacity: 0; transform: scale(1.6); }
+  72%    { opacity: 0; }
+  76%    { opacity: 1; transform: scale(0.6); }
+  92%    { opacity: 0; transform: scale(1.6); }
   100%   { opacity: 0; }
 }
 
