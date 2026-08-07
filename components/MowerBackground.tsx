@@ -107,10 +107,13 @@ export default function MowerBackground() {
         lane.mowerEl.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
         lane.mowerEl.style.opacity = localT >= 1 ? "0" : "1";
 
-        // Reveal the stripe band within this lane, below the diagonal mow line.
+        // Reveal the stripe band within this lane, ABOVE the diagonal
+        // mow line -- the line starts off-screen above the viewport
+        // (negative %) and ends off-screen below it (>100%), so this
+        // correctly grows from nothing revealed to fully revealed.
         const yAtLeft = ((cy + tanA * (lane.laneLeft - cx)) / H) * 100;
         const yAtRight = ((cy + tanA * (lane.laneRight - cx)) / H) * 100;
-        lane.maskEl.style.clipPath = `polygon(0% ${yAtLeft}%, 100% ${yAtRight}%, 100% 100%, 0% 100%)`;
+        lane.maskEl.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${yAtRight}%, 0% ${yAtLeft}%)`;
 
         if (localT >= 1 && !lane.mowerEl.dataset.done) {
           lane.mowerEl.dataset.done = "1";
